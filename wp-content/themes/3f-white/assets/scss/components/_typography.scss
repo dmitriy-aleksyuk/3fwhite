@@ -1,0 +1,46 @@
+.text {
+  color: #222222;
+
+  &-small {
+    font-family: "sans italic";
+    font-size: 13px;
+    line-height: 18px;
+    color: #888888;
+  }
+
+  &-default {
+    font-family: "sans regular";
+    font-size: 18px;
+    line-height: 24px;
+
+    &--up {
+      text-transform: uppercase;
+    }
+
+  }
+
+  &-medium {
+    font-family: Oranienbaum;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+
+  &-large {
+    font-family: Oranienbaum;
+    font-size: 60px;
+    line-height: 60px;
+    text-transform: uppercase;
+
+    //@media screen and (max-width: 1600px) {
+    //  font-size: 48px;
+    //  line-height: 50px;
+    //}
+
+  }
+
+  &-focus {
+    font-weight: bold;
+  }
+
+}

@@ -57,7 +57,7 @@
 
 <div class="wrapper">
   <div class="container container--fluid swiper-container">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper global-wrapper" data-anchor="first">
       <section class="slide-section swiper-slide slide-priority">
   <div class="slide-section__body slide-section__body--section1">
     <div class="front-interactive slide-section__interactive slide-section__interactive-1">
@@ -86,7 +86,7 @@
         <h2 class="front-content__title text text-large" data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".4s">Хотите зарабатывать достойно?</h2>
       </div>
       <div class="front-content__actions front-content__actions--section1">
-        <button class="def-button def-button__positive def-button__positive-toForm" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay=".5s" id="test">хочу зарабатывать</button>
+        <button class="def-button def-button__positive def-button__positive-toForm" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay=".5s">хочу зарабатывать</button>
         <button class="def-button def-button__negative" data-popup-btn="step-to-1" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay=".7s">уже зарабатываю</button>
       </div>
     </div>
@@ -124,8 +124,8 @@
         </ul>
       </div>
       <div class="front-content__actions front-content__actions--section2">
-        <button class="def-button def-button__positive def-button__positive-toForm" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay="1s">хочу все изменить</button>
-        <button class="def-button def-button__negative" data-popup-btn="cat2" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay="1.2s">все устраивает</button>
+        <button class="def-button def-button__positive def-button__positive-toForm" id="test" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay="1s">хочу все изменить</button>
+        <button class="def-button def-button__negative" data-popup-btn="step-to-2" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay="1.2s">все устраивает</button>
       </div>
     </div>
   </div>
@@ -160,7 +160,7 @@
       </div>
       <div class="front-content__actions front-content__actions--section3">
         <button class="def-button def-button__positive def-button__positive-toForm" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay="1s">хочу в студию</button>
-        <button class="def-button def-button__negative" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay="1.2s">ищу другое</button>
+        <button class="def-button def-button__negative" data-popup-btn="step-to-3" data-popup-btn="step-to-3" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay="1.2s">ищу другое</button>
       </div>
     </div>
   </div>
@@ -202,7 +202,7 @@
           это мир ярких впечатлений и возможностей, мир преображения и новых достижений, мир независимости и подлинной свободы самовыражения.
         </p>
         <div class="front-content__actions front-content__actions--section4">
-          <button class="def-button def-button__positive def-button__positive--next" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay=".8s">рассчитать оплату</button>
+          <button class="def-button def-button__positive def-button__positive--next def-button__positive--calculate" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay=".8s">рассчитать оплату</button>
           <button class="def-button def-button__negative def-button__negative--back" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay="1s">назад</button>
         </div>
       </div>
@@ -230,7 +230,7 @@
         </div>
       </div>
       <div class="front-content__titles front-content__titles--section5">
-        <h2 class="front-content__title text-large" data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".4s">Калькулятор оплаты</h2>
+        <h2 class="front-content__title text-large" data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".4s" data-anchor="calculate">Калькулятор оплаты</h2>
       </div>
       <div class="calculate-block front-content__calculate" data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".6s">
         <header class="calculate-block__header">
@@ -410,7 +410,7 @@
   </div>
   <footer class="slide-section__footer"></footer>
 </section>
-      <section class="slide-section swiper-slide slide-priority" data-anchor="last">
+      <section class="slide-section swiper-slide slide-priority">
   <div class="slide-section__body">
     <div class="front-interactive slide-section__interactive slide-section__interactive-8">
       <div class="layer-0 front-interactive__img front-interactive__img--background">
@@ -430,7 +430,7 @@
         </div>
       </div>
       <div class="front-content__titles front-content__titles--section8">
-        <h2 class="front-content__title text text-large" data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".4s">анкета</h2>
+        <h2 class="front-content__title text text-large" data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".4s" data-anchor="last">анкета</h2>
       </div>
       <div class="form-block front-content__form">
         <h3 class="form-block__title text text-default text-default--up" data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".6s">заполни, что бы стать моделью:</h3>
@@ -465,7 +465,7 @@
     </div>
     <div class="popup-overlay__wrap">
       <!-- button of close -->
-      <spam class="popup-overlay__divider">или</spam>
+      <span class="popup-overlay__divider">или</span>
       <button class="popup-overlay__close">
         <span>Esc</span>
       </button>
@@ -476,18 +476,18 @@
           <p class="popup-window__text">Мы считаем, что не стоит думать о перспективе, если ее можно уже взять сегодня.</p>
         </div>
         <div class="popup-window__action">
-          <button class="popup-window__try popup-window__try-2">попробуй</button>
+          <button class="popup-window__try popup-window__try-2 popup-window__toForm">попробуй</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="popup-window" data-popup-content="cat2">
+  <div class="popup-window popup-window--second" data-popup-content="step-to-2">
     <div class="popup-window__imgs">
       <div class="popup-window__img popup-window__img--4"><img src="images/popup/full_2.png" alt="image1"></div>
     </div>
     <div class="popup-overlay__wrap">
       <!-- button of close -->
-      <spam class="popup-overlay__divider">или</spam>
+      <span class="popup-overlay__divider">или</span>
       <button class="popup-overlay__close">
         <span>Esc</span>
       </button>
@@ -497,7 +497,34 @@
           <p class="popup-window__text">Но когда есть выбор между "хорошее" и "лучшее" - очевидно, какой выбор правильный. У нас лучшие условия для новичков: высокие отчисления, ежедневные выплаты с первого дня работы, лучшие трененры и хорошая атмосфера. Приоткрой для себя завесу тайны - просто попробуй, и уже спустя несколько дней ты поймешь, что сделала правильный выбор. Заполни заявку - мы ждем именно тебя))</p>
         </div>
         <div class="popup-window__action">
-          <button class="popup-window__try popup-window__try-3">попробуй</button>
+          <button class="popup-window__try popup-window__try-3 popup-window__toForm">попробуй</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup-window popup-window--third" data-popup-content="step-to-3">
+    <div class="popup-window__imgs">
+      <div class="popup-window__img popup-window__img--4"><img src="images/popup/full_3.png" alt="image1"></div>
+    </div>
+    <div class="popup-overlay__wrap">
+
+      <!-- money as separate items -->
+      <div class="popup-overlay__bill">
+        <img src="images/popup/kopecks.png" alt="">
+      </div>
+
+      <span class="popup-overlay__divider">или</span>
+      <!-- button of close -->
+      <button class="popup-overlay__close">
+        <span>Esc</span>
+      </button>
+      <div class="popup-window__content">
+        <div class="popup-window__container">
+<!--          <h3 class="popup-window__title">Вы свободны в своем выборе</h3>-->
+          <p class="popup-window__text">Средняя зарплата в Украине на апрель 2019 составили 10237 грн. Благодаря нашей опытной команде - мы быстро раскачиваем заработок наших моделей до среднего в 2500$ (~65000 грн)/месяц на руки. Большинство наших опытных моделей зарабатывают $4000 - 6000/месяц, а топы - и $10000/месяц. С нами модели воплощают свои мечты, покупая квартиры, машины и открывая собственные бизнесы, продолжая работать с нами.</p>
+        </div>
+        <div class="popup-window__action">
+          <button class="popup-window__try popup-window__try-4 popup-window__toForm">попробуй</button>
         </div>
       </div>
     </div>

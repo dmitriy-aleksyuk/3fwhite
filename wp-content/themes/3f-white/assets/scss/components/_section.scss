@@ -1,0 +1,136 @@
+.slide-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+
+  @media screen and (max-width: 1024px) {
+    height: auto;
+  }
+
+  @media screen and (max-width: #{$mobileBreakpoint}) {
+    padding: 70px 0 0;
+  }
+
+  @media screen and (max-width: #{$mobileBreakpoint}) {
+    height: auto;
+
+    &:first-child {
+      height: calc(100vh - 83px);
+      padding: 0;
+
+      @media screen and (max-width: 390px) and (max-height: 740px) {
+        height: auto;
+      }
+
+    }
+
+    &:last-child {
+      min-height: 100vh;
+
+      .front-content {
+        padding: 30% 0 70px;
+      }
+    }
+
+  }
+
+  @media screen and (max-width: 580px) {
+    &:first-child .front-interactive {
+      display: none;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-basis: 90%;
+    width: 100%;
+    overflow: hidden;
+
+    &--section1 {
+      @media screen and (max-width: #{$mobileBreakpoint}) {
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          box-shadow: 1px 1px 2px #ffffff;
+        }
+      }
+    }
+
+    @media screen and (max-width: 1200px) {
+      flex-basis: 100%;
+    }
+
+    @media screen and (max-width: #{$mobileBreakpoint}) {
+      overflow: visible;
+      flex-basis: 100%;
+    }
+
+  }
+
+  &__interactive {
+    @media screen and (max-width: #{$mobileBreakpoint}) {
+      transform: translate(0);
+    }
+  }
+
+  //&__footer {
+  //  flex-basis: 10%;
+  //}
+
+  &__interactive-1 {
+    transform: translate(0, 0);
+  }
+
+  &__interactive-2 {
+    transform: translate(15%, 0);
+  }
+
+  &__interactive-3 {
+    transform: translate(25%, 0);
+  }
+
+  &__interactive-4 {
+    transform: translate(-35%, 0);
+  }
+
+  &__interactive-5 {
+    transform: translate(-30%, 0);
+  }
+
+  &__interactive-6 {
+    transform: translate(40%, 0);
+  }
+
+  &__interactive-7 {
+    transform: translate(40%, 0);
+  }
+
+  &__interactive-8 {
+    transform: translate(-30%, 0);
+  }
+
+  &__footer {
+    @media screen and (max-width: #{$mobileBreakpoint}) {
+      display: none;
+    }
+  }
+
+  &__footer {
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+  }
+
+}
+
+.slide-priority:not(.swiper-slide-active) {
+  opacity: 0 !important;
+
+  @media screen and (max-width: #{$mobileBreakpoint}) {
+    opacity: 1 !important;
+  }
+
+}

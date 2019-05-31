@@ -1,0 +1,25 @@
+// COMMON STYLE FILES
+@import "common/reset";
+@import "common/variables";
+@import "fonts/fonts";
+@import "common/mixins";
+@import "common/grid";
+@import "common/animations";
+
+// VENDORS
+
+// COMPONENTS
+@import "components/typography";
+@import "components/button";
+@import "components/default";
+@import "components/header";
+@import "components/burger";
+@import "components/section";
+@import "components/calculator";
+@import "components/form";
+@import "components/feedback-slider";
+@import "components/popup";
+@import "components/preloader";
+
+@import "components/front-interactive";
+@import "components/front-content";

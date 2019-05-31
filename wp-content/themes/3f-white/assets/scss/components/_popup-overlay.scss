@@ -1,0 +1,193 @@
+.popup-overlay {
+  display: none;
+
+  justify-content: center;
+
+  //z-index: 1000;
+
+  background-color: rgba(255, 255, 255, 0.95);
+
+  overflow: auto;
+
+  &__close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50px;
+    right: 130px;
+
+    z-index: 50;
+
+    padding: 0;
+
+    background-color: #888888;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    span {
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media screen and (max-width: 1600px) and (min-width: 1440px) {
+      right: 100px;
+      top: 35px;
+    }
+
+    @media screen and (max-width: 1440px) and (min-width: 580px) {
+      top: 37px;
+      right: 89px;
+      width: 20px;
+      height: 20px;
+    }
+
+    @media screen and (max-width: 580px) {
+      right: 50px;
+      top: 20px;
+    }
+
+    &:before, &:after {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      width: 1px;
+      height: 16px;
+
+      content: '';
+
+      display: block;
+
+      background: #000;
+
+      @media screen and (max-width: 1440px) {
+        height: 12px;
+      }
+
+    }
+
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+  }
+
+  &__bill {
+    position: absolute;
+    top: -27px;
+    left: 211px;
+
+    @media screen and (max-width: 1600px) and (min-width: 1440px) {
+      max-width: 100px;
+      width: 100%;
+      top: -32px;
+      left: 184px;
+    }
+
+    @media screen and (max-width: 1440px) and (min-width: 1200px) {
+      max-width: 80px;
+      width: 100%;
+      top: -12px;
+      left: 171px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+
+  }
+
+  &__divider {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+
+    &:before, &:after {
+      content: '';
+      width: 3px;
+      background: #000000;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &:before {
+      top: -58px;
+      height: 51px;
+
+      @media screen and (max-width: 1600px) {
+        top: -40px;
+        height: 35px;
+      }
+
+    }
+
+    &:after {
+      top: 26px;
+      height: 93px;
+
+      @media screen and (max-width: 1600px) {
+        top: 26px;
+        height: 75px;
+      }
+
+    }
+
+  }
+
+  &__wrap {
+    position: relative;
+    max-width: 730px;
+    width: 100%;
+    margin: auto;
+    top: 265px;
+
+    @media screen and (max-width: 1600px) {
+      top: 223px;
+      max-width: 585px;
+    }
+
+    @media screen and (max-width: 1440px) {
+      top: 203px !important;
+      max-width: 525px !important;
+    }
+
+  }
+
+  &--open {
+    display: flex;
+  }
+
+  // common for popup classes
+
+  &--hide, &--beforeActive {
+    opacity: 0;
+  }
+
+  &--active {
+    opacity: 1;
+  }
+
+  &--hide, &--active {
+    transition: opacity .3s;
+  }
+
+}

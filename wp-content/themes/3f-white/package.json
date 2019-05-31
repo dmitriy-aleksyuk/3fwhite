@@ -1,0 +1,66 @@
+{
+  "name": "test_gulp",
+  "version": "1.0.0",
+  "description": "new environment",
+  "main": "index.js",
+  "scripts": {
+    "dev-modules": "cross-env NODE_ENV=development ES_MODULES=1 gulp",
+    "dev": "cross-env NODE_ENV=development ES_MODULES='' gulp",
+    "prod": "cross-env NODE_ENV=production ES_MODULES='' gulp prod",
+    "clean": "gulp clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "n"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Anton Zolotukhin",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "autoprefixer": "^9.4.10",
+    "babel-loader": "^8.0.5",
+    "cross-env": "^5.2.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "del": "^4.0.0",
+    "depcheck": "^0.7.2",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-change": "^1.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.0.1",
+    "gulp-iconfont": "^10.0.2",
+    "gulp-iconfont-css": "^3.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-inject-string": "^1.1.2",
+    "gulp-line-ending-corrector": "^1.0.3",
+    "gulp-minify": "^3.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-remember": "^1.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-tap": "^1.0.1",
+    "gulp-ttf-svg": "^1.0.1",
+    "gulp-ttf2eot": "^1.1.2",
+    "gulp-ttf2woff": "^1.1.1",
+    "gulp-ttf2woff2": "^2.0.2",
+    "gulp-uglify": "^3.0.2",
+    "merge-stream": "^1.0.1",
+    "postcss-assets": "^5.0.0",
+    "usedcss": "^1.0.7",
+    "webpack": "^4.29.6",
+    "webpack-stream": "^5.2.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3"
+  }
+}

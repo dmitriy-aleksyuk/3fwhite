@@ -1,0 +1,75 @@
+.form-block {
+
+  &__title {
+    color: #ee3723;
+    margin-bottom: 15px;
+  }
+
+  & form {
+    padding-top: 10px;
+    border-top: 1px solid #dbdbdb;
+  }
+
+  &__file {
+    width: 78px;
+    height: 78px;
+    position: relative;
+    margin: 0 auto;
+
+    .form-block__input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+    }
+
+    .form-block__label {
+      display: block;
+      height: 100%;
+      background-color: #e7e7e7;
+      border-radius: 50%;
+      font-family: 'sans regular';
+      font-size: 48px;
+      line-height: 78px;
+      color: #888888;
+
+      &:after {
+        content: 'файл';
+        display: block;
+        font-size: 18px;
+        line-height: 1;
+      }
+
+    }
+
+  }
+
+  &__input {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 15px;
+    padding: 5px 25px;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+  &__actions {
+    margin-top: 60px;
+  }
+
+}

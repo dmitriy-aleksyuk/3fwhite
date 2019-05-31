@@ -1,0 +1,238 @@
+.popup-window {
+  display: none;
+
+  &--second, &--third {
+    .popup-window__text,
+    .popup-window__title {
+      font-size: 17px;
+      line-height: 24px;
+
+      @media screen and (max-width: 1600px)and (min-width: 1440px) {
+        font-size: 15px;
+        line-height: 19px;
+      }
+
+      @media screen and (max-width: 1440px) {
+        font-size: 15px;
+        line-height: 19px;
+      }
+
+    }
+
+    .popup-window__content {
+      @media screen and (max-width: 1440px) {
+        padding: 55px 115px 265px 115px;
+      }
+
+      @media screen and (max-width: 580px) {
+        padding: 55px 50px 50px;
+      }
+
+    }
+
+    .popup-window__action {
+      @media screen and (max-width: 1440px) {
+        margin-top: 40px;
+      }
+    }
+
+  }
+
+  &--third {
+    .popup-window__imgs {
+      max-width: 1120px;
+      top: 9%;
+      left: 52%;
+
+      @media screen and (max-width: 1600px) and (min-width: 1440px) {
+        max-width: 910px;
+      }
+
+      @media screen and (max-width: 1600px) and (min-width: 580px) {
+        max-width: 810px;
+      }
+
+    }
+    .popup-overlay__wrap {
+      z-index: 23;
+    }
+  }
+
+  &__content {
+    //display: none;
+    height: 590px;
+
+    padding: 100px 155px 265px 155px;
+
+    //position: relative;
+
+    //z-index: 21;
+
+    background: url("../images/popup_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    box-sizing: border-box;
+
+    &--active {
+      display: block;
+    }
+
+    &--open {
+      display: block;
+    }
+
+    // mod for animate
+    &--beforeActive, &--hide {
+      opacity: 0;
+    }
+
+    &--active {
+      opacity: 1;
+    }
+
+    &--active, &--hide {
+      transition: opacity .3s;
+    }
+
+    // end mod for animate
+
+    @media screen and (max-width: 1600px) and (min-width: 1440px) {
+      padding: 70px 155px 265px 155px;
+    }
+
+    @media screen and (max-width: 1600px) and (min-width: 580px) {
+      padding: 70px 130px 265px 130px;
+    }
+
+    @media screen and (max-width: 580px) {
+      background: #ee3723;
+      margin: 0 25px;
+      padding: 70px 50px 50px 50px;
+      height: auto;
+    }
+
+  }
+
+  &__imgs {
+    display: flex;
+    position: absolute;
+    z-index: 22;
+    width: 100%;
+    max-width: 1920px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+
+  }
+
+  &__img {
+    width: 100%;
+
+    & img {
+      width: 100%;
+    }
+
+  }
+
+  &__container {
+    text-align: center;
+
+    & p {
+      color: #ffffff;
+      margin-bottom: 30px;
+
+      @media screen and (max-width: 1440px) {
+        margin-bottom: 15px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+    }
+
+  }
+
+  &__action {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: 1600px) {
+      margin-top: 70px;
+    }
+
+  }
+
+  &__title {
+    //margin-bottom: 70px;
+    //font-family: Aquawax;
+    //font-size: 48px;
+    //font-weight: 600;
+    //line-height: 57px;
+    //text-align: center;
+    //text-transform: uppercase;
+    color: #ffffff;
+    font-family: "sans bold";
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    font-family: "sans regular";
+  }
+
+  &__text, &__title {
+    font-size: 24px;
+    line-height: 31px;
+
+    @media screen and (max-width: 1600px) and (min-width: 1440px) {
+      font-size: 19px;
+      line-height: 24px;
+    }
+
+    @media screen and (max-width: 1440px) {
+      font-size: 17px;
+      line-height: 22px;
+    }
+
+  }
+
+  &__try {
+    font-family: "sans regular";
+    font-size: 36px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: #ee3723;
+    width: 338px;
+    height: 80px;
+    background: url("../images/btn_bg.png") no-repeat;
+    background-size: 100%;
+    border: none;
+    cursor: pointer;
+
+    @media screen and (max-width: 1600px) and (min-width: 1440px) {
+      width: 200px;
+      font-size: 20px;
+      line-height: 20px;
+      height: 50px;
+    }
+
+    @media screen and (max-width: 1440px) {
+      width: 170px;
+      font-size: 17px;
+      line-height: 19px;
+      height: 42px;
+    }
+
+  }
+
+}

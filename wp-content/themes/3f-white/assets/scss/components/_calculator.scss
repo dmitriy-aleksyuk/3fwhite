@@ -1,0 +1,173 @@
+.calculate-block {
+  max-width: 365px;
+  width: 100%;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 685px;
+  }
+
+  &__header {
+    padding: 0 30px 17px;
+  }
+
+  &__header, &__body {
+    border-bottom: 1px solid #dbdbdb;
+  }
+
+  &__result,
+  &__condition {
+    color: #ee3723;
+    text-align: left;
+
+    @media screen and (max-width: 1024px) {
+      text-align: center;
+    }
+
+  }
+
+  &__result {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  //&__condition {
+  //  color: #ee3723;
+  //}
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 30px 40px;
+
+    @media screen and (max-width: 1024px) {
+      padding: 10px 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+    }
+
+  }
+
+  &__col {
+    margin-bottom: 35px;
+
+    @media screen and (max-width: 1024px) {
+      width: calc(100% / 3);
+      min-width: 180px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      .calculate-block__actions {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 80px;
+
+        @media screen and (max-width: 1024px) {
+          flex-wrap: wrap;
+        }
+
+        .calculate-block__action {
+          margin-bottom: 0;
+
+          @media screen and (max-width: 1024px) {
+            width: 100%;
+            margin-bottom: 8px;
+          }
+
+        }
+
+      }
+
+    }
+
+    &--50 {
+      width: 50%;
+    }
+
+    &--100 {
+      width: 100%;
+    }
+
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__title, &__label {
+    color: #888888;
+    text-align: left;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked {
+
+      & + .calculate-block__label:after {
+        opacity: 1;
+      }
+
+    }
+
+  }
+
+  &__label {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 30px;
+
+    &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      transform: translateY(2px);
+    }
+
+    &:before {
+      width: 15px;
+      height: 15px;
+      border: 2px solid #dbdbdb;
+      border-radius: 50%;
+      left: 0;
+      top: 0;
+    }
+
+    &:after {
+      opacity: 0;
+      width: 9px;
+      height: 9px;
+      border: 3px solid #ee3723;
+      border-radius: 50%;
+      left: 2px;
+      top: 2px;
+      transition: opacity .3s;
+    }
+
+  }
+
+  &__buttons {
+    padding-top: 55px;
+
+    @media screen and (max-width: 1024px) {
+      padding-top: 20px;
+    }
+
+  }
+
+  &__action {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+}

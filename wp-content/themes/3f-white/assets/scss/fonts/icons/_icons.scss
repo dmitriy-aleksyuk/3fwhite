@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "icons";
+  src: url('../fonts/icons/icons.eot?1559035165974');
+  src: url('../fonts/icons/icons.eot?1559035165974#iefix') format('eot'),
+  url('../fonts/icons/icons.woff2?1559035165974') format('woff2'),
+  url('../fonts/icons/icons.woff?1559035165974') format('woff'),
+  url('../fonts/icons/icons.ttf?1559035165974') format('truetype'),
+  url('../fonts/icons/icons.svg?1559035165974#icons') format('svg');
+}
+
+.icon:before {
+  font-family: "icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  /* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+  text-decoration: none;
+  text-transform: none;
+}
+
+
+.icon-b2b_companies_ukraine_2018:before {
+  content: "\E001";
+}
+
+.icon-emerging_europe_alliance_site:before {
+  content: "\E002";
+}
+
+.icon-european_software_finalist_logo:before {
+  content: "\E003";
+}
+
+.icon-gsa:before {
+  content: "\E004";
+}
+
+.icon-iaop:before {
+  content: "\E005";
+}
+
