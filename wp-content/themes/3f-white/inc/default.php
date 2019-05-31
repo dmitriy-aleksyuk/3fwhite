@@ -128,9 +128,18 @@ function theme_the_excerpt() {
 }
 
 /**
- * Add acf Options tab
- */
-if ( function_exists( 'acf_add_options_page' ) && current_user_can( 'theme_options_view' ) ) {
+ * theme options for admin
+*/
+function white_options_capability(){
+	$role = get_role( 'administrator' );
+	$role->add_cap( 'theme_options_view' );
+}
+add_action( 'admin_init', 'white_options_capability' );
+
+/**
+ * theme options tab in appearance
+*/
+if( function_exists( 'acf_add_options_page' ) && current_user_can( 'theme_options_view' ) ) {
 	acf_add_options_page();
 }
 
