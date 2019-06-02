@@ -3,15 +3,14 @@
 Template Name: Home Template
 */
 get_header(); ?>
-<?php //while ( have_posts() ) : the_post(); ?>
 
-	<?php if( have_rows('sections_biilder') ): ?>
+	<?php if( have_rows('sections_bilder') ): ?>
 	
 		<div class="wrapper">
 			<div class="container container--fluid swiper-container">
 				<div class="swiper-wrapper global-wrapper" data-anchor="first">
 					
-			    <?php while ( have_rows('sections_biilder') ) : the_row(); ?>
+			    <?php while ( have_rows('sections_bilder') ) : the_row(); ?>
 			        <?php if( get_row_layout() == 'section_1' ): ?>
 			
 						<section class="slide-section swiper-slide slide-priority">
@@ -452,7 +451,7 @@ get_header(); ?>
 												</div>
 												<div class="feedback-slider__slide swiper-slide">
 													<p class="front-content__text text-default">
-														Приятный коллекив, адекватное руководство, на время сессии предоставляют
+														Пр��ятный коллекив, адекватное руководство, на время сессии предоставляют
 														отпуск — что еще нужно сдуденту.
 													</p>
 													<p class="front-content__user text-default">Карина З., 19 лет</p>
@@ -547,90 +546,75 @@ get_header(); ?>
 			</div>
 		</div>	
 		
-	<?php endif; ?>
+<?php endif; ?>
 	
+	
+	
+	
+<?php if( have_rows('popup_blocks', 'options') ) : $item_counter = 0; ?>
 	<div class="popup-overlay">
-		<!-- container for content -->
-		<div class="popup-window" data-popup-content="step-to-1">
-			<div class="popup-window__imgs">
-				<div class="popup-window__img popup-window__img--4"><img src="<?php echo get_template_directory_uri(); ?>/build/images/popup/full_1.png" alt="image1"></div>
-			</div>
-			<div class="popup-overlay__wrap">
-				<!-- button of close -->
-				<span class="popup-overlay__divider">или</span>
-				<button class="popup-overlay__close">
-					<span>Esc</span>
-				</button>
-				<div class="popup-window__content">
-					<div class="popup-window__container">
-						<h3 class="popup-window__title">Время идет</h3>
-						<p class="popup-window__text">Сегодня вас это устаивает, но что будет через 5, 10, 15 лет?</p>
-						<p class="popup-window__text">Мы считаем, что не стоит думать о перспективе, если ее можно уже взять
-							сегодня.</p>
-					</div>
-					<div class="popup-window__action">
-						<button class="popup-window__try popup-window__try-2 popup-window__toForm">попробуй</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="popup-window popup-window--second" data-popup-content="step-to-2">
-			<div class="popup-window__imgs">
-				<div class="popup-window__img popup-window__img--4"><img src="<?php echo get_template_directory_uri(); ?>/build/images/popup/full_2.png" alt="image1"></div>
-			</div>
-			<div class="popup-overlay__wrap">
-				<!-- button of close -->
-				<span class="popup-overlay__divider">или</span>
-				<button class="popup-overlay__close">
-					<span>Esc</span>
-				</button>
-				<div class="popup-window__content">
-					<div class="popup-window__container">
-						<h3 class="popup-window__title">Вы свободны в своем выборе</h3>
-						<p class="popup-window__text">Но когда есть выбор между "хорошее" и "лучшее" - очевидно, какой выбор
-							правильный. У нас лучшие условия для новичков: высокие отчисления, ежедневные выплаты с первого
-							дня работы, лучшие трененры и хорошая атмосфера. Приоткрой для себя завесу тайны - просто
-							попробуй, и уже спустя несколько дней ты поймешь, что сделала правильный выбор. Заполни заявку -
-							мы ждем именно тебя))</p>
-					</div>
-					<div class="popup-window__action">
-						<button class="popup-window__try popup-window__try-3 popup-window__toForm">попробуй</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="popup-window popup-window--third" data-popup-content="step-to-3">
-			<div class="popup-window__imgs">
-				<div class="popup-window__img popup-window__img--4"><img src="<?php echo get_template_directory_uri(); ?>/build/images/popup/full_3.png" alt="image1"></div>
-			</div>
-			<div class="popup-overlay__wrap">
-	
-				<!-- money as separate items -->
-				<div class="popup-overlay__bill">
-					<img src="<?php echo get_template_directory_uri(); ?>/build/images/popup/kopecks.png" alt="">
-				</div>
-	
-				<span class="popup-overlay__divider">или</span>
-				<!-- button of close -->
-				<button class="popup-overlay__close">
-					<span>Esc</span>
-				</button>
-				<div class="popup-window__content">
-					<div class="popup-window__container">
-						<!--          <h3 class="popup-window__title">Вы свободны в своем выборе</h3>-->
-						<p class="popup-window__text">Средняя зарплата в Украине на апрель 2019 составили 10237 грн.
-							Благодаря нашей опытной команде - мы быстро раскачиваем заработок наших моделей до среднего в
-							2500$ (~65000 грн)/месяц на руки. Большинство наших опытных моделей зарабатывают $4000 -
-							6000/месяц, а топы - и $10000/месяц. С нами модели воплощают свои мечты, покупая квартиры,
-							машины и открывая собственные бизнесы, продолжая работать с нами.</p>
-					</div>
-					<div class="popup-window__action">
-						<button class="popup-window__try popup-window__try-4 popup-window__toForm">попробуй</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <?php while ( have_rows('popup_blocks', 'options') ) : the_row(); 
+    		$item_counter++;
+    		$popup_top_image = get_sub_field('popup_top_image');
+			$popup_money_image = get_sub_field('popup_money_image');
+			$popup_title = get_sub_field('popup_title');
+			$popup_button = get_sub_field('popup_button');
+            if( $item_counter == 1 ) :
+                $popup_window = ''; 
+    			$image_size = $popup_top_image['sizes']['thumbnail_1248x297'];
+            elseif ( $item_counter == 2 ) :
+            	$popup_window = ' popup-window--second'; 
+    			$image_size = $popup_top_image['sizes']['thumbnail_1248x297'];
+    		elseif ( $item_counter == 3 ) :
+            	$popup_window = ' popup-window--third'; 
+    			$image_size = $popup_top_image['sizes']['thumbnail_1215x603'];
+    			$image_money_size = $popup_money_image['sizes']['thumbnail_140x126'];
+    		endif; ?>
 
-<?php //endwhile; ?>
+			<div class="popup-window<?php echo $popup_window; ?>" data-popup-content="step-to-<?php echo $item_counter; ?>">
+				<?php if ( ! empty( $popup_top_image ) ): ?>
+					<div class="popup-window__imgs">
+						<div class="popup-window__img popup-window__img--4">
+							<img src="<?php echo $image_size; ?>" alt="<?php echo $popup_top_image['alt']; ?>">
+						</div>
+					</div>
+				<?php endif; ?>
+				
+				<div class="popup-overlay__wrap">
+					<?php if ( ! empty( $popup_money_image ) ): ?>
+						<!-- money as separate items -->
+						<div class="popup-overlay__bill">
+							<img src="<?php echo $image_money_size; ?>" alt="<?php echo $popup_money_image['alt']; ?>">
+						</div>
+					<?php endif; ?>
+					<span class="popup-overlay__divider"><?php _e( 'или', '3f-white' ) ?></span>
+					<!-- button of close -->
+					<button class="popup-overlay__close">
+						<span><?php _e( 'Esc', '3f-white' ) ?></span>
+					</button>
+					<div class="popup-window__content">
+						<div class="popup-window__container">
+							<?php if ( ! empty( $popup_title ) ): ?>
+								<h3 class="popup-window__title"><?php echo $popup_title; ?></h3>
+							<?php endif; ?>
+							<?php if( have_rows('popup_description') ) : ?>
+    						<?php while ( have_rows('popup_description') ) : the_row(); 
+    							$description_text = get_sub_field('description_text');?>
+    							<p class="popup-window__text"><?php echo $description_text; ?></p>
+    						<?php endwhile; ?>
+							<?php endif; ?>
+						</div>
+						<?php if ( ! empty( $popup_button ) ): ?>
+						<div class="popup-window__action">
+							<button class="popup-window__try popup-window__try-4 popup-window__toForm"><?php echo $popup_button; ?></button>
+						</div>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+
+    <?php endwhile; ?>
+	</div>
+<?php endif; ?>
+
 <?php get_footer(); ?>
