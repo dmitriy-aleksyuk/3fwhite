@@ -6,27 +6,27 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div class="preloader">
-	<div class="preloader__interactive">
-		<div class="preloader__img">
-			<img src="<?php echo get_template_directory_uri(); ?>/build/images/logo.png" alt="preloader">
+<?php if ( ! empty( $main_logo = get_field( 'main_logo', 'options' ) ) ): ?>
+	<div class="preloader">
+		<div class="preloader__interactive">
+			<div class="preloader__img">
+				<img src="<?php echo $main_logo['sizes']['thumbnail_53x42']; ?>" alt="<?php echo $main_logo['alt']; ?>">
+			</div>
+			<span class="preloader__progress"></span>
 		</div>
-		<span class="preloader__progress"></span>
 	</div>
-</div>
+<?php endif; ?>
 <header class="main-header">
 	<div class="container container--fluid">
 		<div class="main-header__wrap">
-			<?php $main_logo = get_field( 'main_logo', 'options' ); ?>
-			<?php //if ( ! empty( $main_logo ) ): ?>
+			<?php if ( ! empty( $main_logo ) ): ?>
 				<div class="main-header__logo">
 					<a href="<?php echo home_url(); ?>">
-						<img src="<?php echo get_template_directory_uri(); ?>/build/images/logo.png"
-						     alt="<?php bloginfo( 'name' ); ?>">
+						<img src="<?php echo $main_logo['sizes']['thumbnail_53x42']; ?>"
+						     alt="<?php echo $main_logo['alt']; ?>">
 					</a>
 				</div>
-			<?php //endif; ?>
-			
+			<?php endif; ?>
 			<button class="main-header__burger">
 				<svg class="ham ham6" viewBox="0 0 100 100" width="50">
 					<path
@@ -41,35 +41,33 @@
 				</svg>
 			</button>
 			<div class="main-header__social">
-
-				<?php if ( have_rows( 'header_menu', 'options' ) ): ?>
-					<ul class="main-header__list">
-						<?php while ( have_rows( 'header_menu', 'options' ) ) : the_row(); ?>
-							<?php if ( get_row_layout() == 'phone' ): ?>
-
+			<?php if ( have_rows( 'header_menu', 'options' ) ): ?>
+				<ul class="main-header__list">
+					<?php while ( have_rows( 'header_menu', 'options' ) ) : the_row(); ?>
+						<?php if ( get_row_layout() == 'phone' ): 
+							if ( ! empty( $phone_number = get_sub_field('phone_number' ) ) ): ?>
 								<li class="main-header__item main-header__item--phone">
-									<a class="main-header__link" href="tel:+380670000001">+380670000001</a>
+									<a class="main-header__link" href="tel:<?php echo clean_phone($phone_number); ?>"><?php echo $phone_number; ?></a>
 								</li>
-
-							<?php elseif ( get_row_layout() == 'twitter' ): ?>
-
-								<li class="main-header__item main-header__item--telegram">
-									<a class="main-header__link" href="#">@telegram</a>
-								</li>
-
-							<?php elseif ( get_row_layout() == 'email' ): ?>
-
-								<li class="main-header__item main-header__item--main">
-									<a class="main-header__link" href="mailto:mail@gmail.com">mail@gmail.com</a>
-								</li>
-
 							<?php endif; ?>
-
-						<?php endwhile; ?>
-					</ul>
-				<?php endif; ?>
-
-
+						<?php elseif ( get_row_layout() == 'telegram' ): 
+							$telegram_link = get_sub_field('telegram_link');
+							$telegram_name = get_sub_field('telegram_name'); ?>
+							<?php if( ! empty( $telegram_link ) && ! empty( $telegram_name ) ): ?>
+								<li class="main-header__item main-header__item--telegram">
+									<a class="main-header__link" href="<?php echo esc_url($telegram_link); ?>"><?php echo $telegram_name; ?></a>
+								</li>
+							<?php endif; ?>
+						<?php elseif ( get_row_layout() == 'email' ): 
+							if ( ! empty( $mail_box = get_sub_field('mail_box') ) ): ?>
+								<li class="main-header__item main-header__item--main">
+									<a class="main-header__link" href="mailto:<?php echo antispambot($mail_box); ?>"><?php echo $mail_box; ?></a>
+								</li>
+							<?php endif; ?>
+						<?php endif; ?>
+					<?php endwhile; ?>
+				</ul>
+			<?php endif; ?>
 			</div>
 		</div>
 	</div>
