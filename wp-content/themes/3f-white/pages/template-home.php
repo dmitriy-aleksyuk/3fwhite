@@ -307,8 +307,7 @@ get_header(); ?>
 							<div class="layer-0 front-interactive__img front-interactive__img--background">
 								<img src="<?php echo get_template_directory_uri(); ?>/build/images/top_z-index_1_9.png" alt="">
 							</div>
-							<div
-								class="layer-1 front-interactive__img front-interactive__img--main front-interactive__img--section-5">
+							<div class="layer-1 front-interactive__img front-interactive__img--main front-interactive__img--section-5">
 								<img src="<?php echo $main_image_s5['sizes']['thumbnail_693x713']; ?>" alt="<?php echo $main_image_s5['alt']; ?>">
 							</div>
 							<div class="layer-2 front-interactive__img front-interactive__img--subbackground">
@@ -473,8 +472,7 @@ get_header(); ?>
 								<div class="layer-0 front-interactive__img front-interactive__img--background">
 									<img src="<?php echo get_template_directory_uri(); ?>/build/images/top_z-index_6_4.png" alt="">
 								</div>
-								<div
-									class="layer-1 front-interactive__img front-interactive__img--main front-interactive__img--section-6">
+								<div class="layer-1 front-interactive__img front-interactive__img--main front-interactive__img--section-6">
 									<img src="<?php echo $main_image_s6['sizes']['thumbnail_409x713']; ?>" alt="<?php echo $main_image_s6['alt']; ?>">
 								</div>
 								<div class="layer-2 front-interactive__img front-interactive__img--subbackground">
@@ -555,8 +553,7 @@ get_header(); ?>
 								<div class="layer-0 front-interactive__img front-interactive__img--background">
 									<img src="<?php echo get_template_directory_uri(); ?>/build/images/top_z-index_7_7.png" alt="">
 								</div>
-								<div
-									class="layer-1 front-interactive__img front-interactive__img--main front-interactive__img--section-7">
+								<div class="layer-1 front-interactive__img front-interactive__img--main front-interactive__img--section-7">
 									<img src="<?php echo $main_image_s7['sizes']['thumbnail_589x874']; ?>" alt="<?php echo $main_image_s7['alt']; ?>">
 								</div>
 								<div class="layer-2 front-interactive__img front-interactive__img--subbackground">
@@ -627,37 +624,48 @@ get_header(); ?>
 					<footer class="slide-section__footer"></footer>
 				</section>
 	        
-	        <?php elseif( get_row_layout() == 'section_8' ): ?>
+	        <?php elseif( get_row_layout() == 'section_8' ): 
+	        	$main_image_s8 = get_sub_field('main_image_s8');
+	        	$job_text_s8 = get_sub_field('job_text_s8');
+	        	$profile_s8 = get_sub_field('profile_s8');
+	        	$fill_profile_s8 = get_sub_field('fill_profile_s8'); ?>
 	        
 				<section class="slide-section swiper-slide slide-priority">
 					<div class="slide-section__body">
-						<div class="front-interactive slide-section__interactive slide-section__interactive-<?php echo $section_counter; //8 ?>">
-							<div class="layer-0 front-interactive__img front-interactive__img--background">
-								<img src="<?php echo get_template_directory_uri(); ?>/build/images/top_z-index_8_1.png" alt="">
-							</div>
-							<div
-								class="layer-1 front-interactive__img front-interactive__img--main front-interactive__img--section-8">
-								<img src="<?php echo get_template_directory_uri(); ?>/build/images/models/section_8.png" alt="">
-							</div>
-							<div class="layer-2 front-interactive__img front-interactive__img--subbackground">
-								<img src="<?php echo get_template_directory_uri(); ?>/build/images/vector_smart_object_p.png" alt="">
-							</div>
-						</div>
-						<div class="front-content">
-							<div class="front-content__slogans front-content__slogans--section<?php echo $section_counter; //8 ?>"
-							     data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".4s">
-								<div class="front-content__job">
-									<p class="text text-medium">Работа <br> вэб моделью в харькове</p>
+						<?php if ( ! empty( $main_image_s8 ) ): ?>
+							<div class="front-interactive slide-section__interactive slide-section__interactive-<?php echo $section_counter; //8 ?>">
+								<div class="layer-0 front-interactive__img front-interactive__img--background">
+									<img src="<?php echo get_template_directory_uri(); ?>/build/images/top_z-index_8_1.png" alt="">
+								</div>
+								<div class="layer-1 front-interactive__img front-interactive__img--main front-interactive__img--section-8">
+									<img src="<?php echo $main_image_s8['sizes']['thumbnail_449x884']; ?>" alt="<?php echo $main_image_s8['alt']; ?>">
+								</div>
+								<div class="layer-2 front-interactive__img front-interactive__img--subbackground">
+									<img src="<?php echo get_template_directory_uri(); ?>/build/images/vector_smart_object_p.png" alt="">
 								</div>
 							</div>
-							<div class="front-content__titles front-content__titles--section<?php echo $section_counter; //8 ?>">
-								<h2 class="front-content__title text text-large" data-swiper-animation="fadeInDown"
-								    data-duration=".2s" data-delay=".4s" data-anchor="last">анкета</h2>
-							</div>
+						<?php endif; ?>	
+						<div class="front-content">
+							<?php if ( ! empty( $job_text_s8 ) ): ?>
+								<div class="front-content__slogans front-content__slogans--section<?php echo $section_counter; //8 ?>"
+								     data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".4s">
+									<div class="front-content__job">
+										<p class="text text-medium"><?php echo $job_text_s8; ?></p>
+									</div>
+								</div>
+							<?php endif; ?>	
+							<?php if ( ! empty( $profile_s8 ) ): ?>
+								<div class="front-content__titles front-content__titles--section<?php echo $section_counter; //8 ?>">
+									<h2 class="front-content__title text text-large" data-swiper-animation="fadeInDown"
+									    data-duration=".2s" data-delay=".4s" data-anchor="last"><?php echo $profile_s8; ?></h2>
+								</div>
+							<?php endif; ?>	
 							<div class="form-block front-content__form">
-								<h3 class="form-block__title text text-default text-default--up"
-								    data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".6s">заполни, что бы
-									стать моделью:</h3>
+								<?php if ( ! empty( $fill_profile_s8 ) ): ?>
+									<h3 class="form-block__title text text-default text-default--up"
+									    data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".6s"><?php echo $fill_profile_s8; ?>
+									</h3>
+								<?php endif; ?>	
 								<form action="" data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".7s">
 									<input class="form-block__input text text-default" type="text" placeholder="ФИО">
 									<input class="form-block__input text text-default" type="number" placeholder="Возраст">
@@ -676,6 +684,7 @@ get_header(); ?>
 										</button>
 									</div>
 								</form>
+								
 							</div>
 						</div>
 					</div>
@@ -691,6 +700,5 @@ get_header(); ?>
 	</div>	
 		
 <?php endif; ?>
-	
 
 <?php get_footer(); ?>

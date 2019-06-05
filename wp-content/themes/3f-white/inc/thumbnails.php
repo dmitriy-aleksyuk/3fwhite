@@ -17,7 +17,8 @@ add_image_size( 'thumbnail_409x713', 409, 713, true );
 add_image_size( 'thumbnail_127x122', 127, 122, true );
 // Section 7
 add_image_size( 'thumbnail_589x874', 589, 874, true );
-
+// Section 8
+add_image_size( 'thumbnail_449x884', 449, 884, true );
 // Popup
 add_image_size( 'thumbnail_1248x297', 1248, 297, true );
 add_image_size( 'thumbnail_1215x603', 1215, 603, true );
