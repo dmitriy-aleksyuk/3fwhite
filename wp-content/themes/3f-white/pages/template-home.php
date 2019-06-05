@@ -628,7 +628,9 @@ get_header(); ?>
 	        	$main_image_s8 = get_sub_field('main_image_s8');
 	        	$job_text_s8 = get_sub_field('job_text_s8');
 	        	$profile_s8 = get_sub_field('profile_s8');
-	        	$fill_profile_s8 = get_sub_field('fill_profile_s8'); ?>
+	        	$fill_profile_s8 = get_sub_field('fill_profile_s8');
+	        	$contact_form_profile_s8 = get_sub_field('contact_form_profile_s8'); 
+	        	$grey_button_s8 = get_sub_field('grey_button_s8'); ?>
 	        
 				<section class="slide-section swiper-slide slide-priority">
 					<div class="slide-section__body">
@@ -666,25 +668,23 @@ get_header(); ?>
 									    data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".6s"><?php echo $fill_profile_s8; ?>
 									</h3>
 								<?php endif; ?>	
-								<form action="" data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".7s">
-									<input class="form-block__input text text-default" type="text" placeholder="ФИО">
-									<input class="form-block__input text text-default" type="number" placeholder="Возраст">
-									<input class="form-block__input text text-default" type="number" placeholder="Телефон">
-									<div class="form-block__file">
-										<input class="form-block__input" type="file" id="form-file">
-										<label class="form-block__label" for="form-file">+</label>
-									</div>
-									<div class="form-block__actions front-content__actions--section8">
-										<button class="def-button def-button__positive" data-swiper-animation="fadeInDown"
-										        data-duration=".2s" data-delay=".8s">отправить анкету
-										</button>
+								
+								<?php if ( ! empty( $contact_form_profile_s8 ) ):
+										foreach( $contact_form_profile_s8 as $cf7 ):
+									    	$cf7_id = $cf7->ID;
+									    	$cf7_title = $cf7->post_title;
+									    		echo do_shortcode( '[contact-form-7 id="' . $cf7_id . '" title="' . $cf7_title . '"]' ); 
+									    endforeach;
+							    	endif; ?>
+							    	
+							    <?php if ( ! empty( $grey_button_s8 ) ): ?>	
+							    	<div class="form-block__actions front-content__actions--section8">
 										<button class="def-button def-button__negative def-button__negative--back"
 										        data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".9s">
-											назад
+											<?php echo $grey_button_s8; ?>
 										</button>
 									</div>
-								</form>
-								
+								<?php endif; ?>
 							</div>
 						</div>
 					</div>
