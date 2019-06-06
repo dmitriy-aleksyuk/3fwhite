@@ -21,9 +21,10 @@ get_header(); ?>
 	        	$grey_button_s1 = get_sub_field('grey_button_s1'); ?>
 	
 				<section class="slide-section swiper-slide slide-priority">
-					<?php //echo ( $section_counter == 1 ) ? ' slide-section__body--section' . $section_counter . '' : ''; ?>
-					<div class="slide-section__body<?php echo ( $section_counter == 1 ) ? ' slide-section__body--section' . $section_counter . '' : ''; ?>">
-					<!--<div class="slide-section__body slide-section__body--section1">-->
+					<?php /*
+					<div class="slide-section__body<?php //echo ( $section_counter == 1 ) ? ' slide-section__body--section' . $section_counter . '' : ''; ?>">
+					*/?>
+					<div class="slide-section__body slide-section__body--section1">
 					<?php if ( ! empty( $main_image_s1 ) ): ?>
 						<div class="front-interactive slide-section__interactive slide-section__interactive-<?php echo $section_counter; //1 ?>">
 							<div class="layer-0 front-interactive__img front-interactive__img--background">
@@ -39,7 +40,7 @@ get_header(); ?>
 						</div>
 					<?php endif; ?>
 						<div class="front-content">
-							<div class="front-content__slogans front-content__slogans--section<?php echo $section_counter; //1 ?>"
+							<div class="front-content__slogans front-content__slogans--section1"
 							     data-swiper-animation="fadeInDown" data-duration=".2s">
 								<?php if ( ! empty( $job_text_s1 ) ): ?>
 									<div class="front-content__job">
@@ -54,13 +55,13 @@ get_header(); ?>
 								<?php endif; ?>
 							</div>
 							<?php if ( ! empty( $question_s1 ) ): ?>
-								<div class="front-content__titles front-content__titles--section<?php echo $section_counter; //1 ?>">
+								<div class="front-content__titles front-content__titles--section1">
 									<h2 class="front-content__title text text-large" data-swiper-animation="fadeInDown"
 									    data-duration=".2s" data-delay=".4s"><?php echo $question_s1; ?></h2>
 								</div>
 							<?php endif; ?>
 							<?php if ( ! empty( $red_button_s1 ) || ! empty( $grey_button_s1 ) ): ?>
-								<div class="front-content__actions front-content__actions--section<?php echo $section_counter; //1 ?>">
+								<div class="front-content__actions front-content__actions--section1">
 									<?php if ( ! empty( $red_button_s1 ) ): ?>
 										<button class="def-button def-button__positive def-button__positive-toForm"
 										        data-swiper-animation="fadeInDown" data-duration=".5s" data-delay=".5s">
@@ -105,7 +106,7 @@ get_header(); ?>
 					<?php endif; ?>
 						<div class="front-content front-content--section2">
 							<?php if ( ! empty( $job_text_s2 ) ): ?>
-								<div class="front-content__slogans front-content__slogans--section<?php echo $section_counter; //2 ?>"
+								<div class="front-content__slogans front-content__slogans--section2"
 								     data-swiper-animation="fadeInDown" data-duration=".2s">
 									<div class="front-content__job">
 										<p class="text text-medium"><?php echo $job_text_s2; ?></p>
@@ -121,7 +122,7 @@ get_header(); ?>
 								</div>
 							<?php endif; ?>
 							<?php if( have_rows('questions_problems_s2') ) : ?>
-								<div class="front-content__questions front-content__questions--section<?php echo $section_counter; //2 ?>">
+								<div class="front-content__questions front-content__questions--section2">
 									<ul class="front-content__list">
 		    						<?php while ( have_rows('questions_problems_s2') ) : the_row(); 
 		    							$problem_s1 = get_sub_field('problem_s1'); ?>
@@ -133,7 +134,7 @@ get_header(); ?>
 								</div>
 							<?php endif; ?>
 							<?php if ( ! empty( $red_button_s2 ) || ! empty( $grey_button_s2 ) ): ?>
-								<div class="front-content__actions front-content__actions--section<?php echo $section_counter; //2 ?>">
+								<div class="front-content__actions front-content__actions--section2">
 									<?php if ( ! empty( $red_button_s2 ) ): ?>
 										<button class="def-button def-button__positive def-button__positive-toForm" id="test"
 										        data-swiper-animation="fadeInDown" data-duration=".5s" data-delay="1s">
@@ -178,7 +179,7 @@ get_header(); ?>
 						<?php endif; ?>
 						<div class="front-content">
 							<?php if ( ! empty( $job_text_s3 ) ): ?>
-								<div class="front-content__slogans front-content__slogans--section<?php echo $section_counter; //3 ?>"
+								<div class="front-content__slogans front-content__slogans--section3"
 								     data-swiper-animation="fadeInDown" data-duration=".2s">
 									<div class="front-content__job">
 										<p class="text text-medium"><?php echo $job_text_s3; ?></p>
@@ -186,7 +187,7 @@ get_header(); ?>
 								</div>
 							<?php endif; ?>
 							<?php if ( ! empty( $offer_first_s3 ) || ! empty( $offer_second_s3 ) ): ?>
-								<div class="front-content__titles front-content__titles--section<?php echo $section_counter; //3 ?>">
+								<div class="front-content__titles front-content__titles--section3">
 									<h2 class="front-content__title text text-large" data-swiper-animation="fadeInDown"
 									    data-duration=".2s" data-delay=".4s"><?php echo $offer_first_s3; ?></h2>
 									<h2 class="front-content__title text text-large" data-swiper-animation="fadeInDown"
@@ -203,7 +204,7 @@ get_header(); ?>
 								</div>
 							<?php endif; ?>
 							<?php if ( ! empty( $red_button_s3 ) || ! empty( $grey_button_s3 ) ): ?>
-								<div class="front-content__actions front-content__actions--section<?php echo $section_counter; //3 ?>">
+								<div class="front-content__actions front-content__actions--section3">
 									<?php if ( ! empty( $red_button_s3 ) ): ?>
 										<button class="def-button def-button__positive def-button__positive-toForm"
 										        data-swiper-animation="fadeInDown" data-duration=".5s" data-delay="1s">
@@ -248,7 +249,7 @@ get_header(); ?>
 						<?php endif; ?>
 						<div class="front-content">
 							<?php if ( ! empty( $job_text_s4 ) ): ?>
-								<div class="front-content__slogans front-content__slogans--section<?php echo $section_counter; //4 ?>"
+								<div class="front-content__slogans front-content__slogans--section4"
 								     data-swiper-animation="fadeInDown" data-duration=".2s">
 									<div class="front-content__job">
 										<p class="text text-medium"><?php echo $job_text_s4; ?></p>
@@ -256,7 +257,7 @@ get_header(); ?>
 								</div>
 							<?php endif; ?>
 							<?php if ( ! empty( $privilege_s4 ) ): ?>
-								<div class="front-content__titles front-content__titles--section<?php echo $section_counter; //4 ?>">
+								<div class="front-content__titles front-content__titles--section4">
 									<h2 class="front-content__title text text-large" data-swiper-animation="fadeInDown"
 									    data-duration=".2s" data-delay=".4s"><?php echo $privilege_s4; ?></h2>
 								</div>
@@ -278,7 +279,7 @@ get_header(); ?>
 	    						<?php endwhile; ?>
 								<?php endif; ?>
 								<?php if ( ! empty( $red_button_s4 ) || ! empty( $grey_button_s4 ) ): ?>
-									<div class="front-content__actions front-content__actions--section<?php echo $section_counter; //4 ?>">
+									<div class="front-content__actions front-content__actions--section4">
 										<?php if ( ! empty( $red_button_s4 ) ): ?>
 							          		<button class="def-button def-button__positive def-button__positive--next def-button__positive--calculate" data-swiper-animation="fadeInDown" data-duration=".5s" data-delay=".8s"><?php echo $red_button_s4; ?></button>
 							          	<?php endif; ?>
@@ -318,7 +319,7 @@ get_header(); ?>
 						<?php endif; ?>
 						<div class="front-content">
 							<?php if ( ! empty( $job_text_s5 ) ): ?>
-								<div class="front-content__slogans front-content__slogans--section<?php echo $section_counter; //5 ?>"
+								<div class="front-content__slogans front-content__slogans--section5"
 								     data-swiper-animation="fadeInDown" data-duration=".2s">
 									<div class="front-content__job">
 										<p class="text-medium"><?php echo $job_text_s5; ?></p>
@@ -326,7 +327,7 @@ get_header(); ?>
 								</div>
 							<?php endif; ?>
 							<?php if ( ! empty( $calculator_s5 ) ): ?>
-								<div class="front-content__titles front-content__titles--section<?php echo $section_counter; //5 ?>">
+								<div class="front-content__titles front-content__titles--section5">
 									<h2 class="front-content__title text-large" data-swiper-animation="fadeInDown"
 									    data-duration=".2s" data-delay=".4s" data-anchor="calculate"><?php echo $calculator_s5; ?></h2>
 								</div>
@@ -483,7 +484,7 @@ get_header(); ?>
 						<?php endif; ?>
 						<div class="front-content">
 							<?php if ( ! empty( $job_text_s6 ) ): ?>
-								<div class="front-content__slogans front-content__slogans--section<?php echo $section_counter; //6 ?>"
+								<div class="front-content__slogans front-content__slogans--section6"
 								     data-swiper-animation="fadeInDown" data-duration=".2s">
 									<div class="front-content__job">
 										<p class="text text-medium"><?php echo $job_text_s6; ?></p>
@@ -491,7 +492,7 @@ get_header(); ?>
 								</div>
 							<?php endif; ?>
 							<?php if ( ! empty( $facts_studio_s6 ) ): ?>
-								<div class="front-content__titles front-content__titles--section<?php echo $section_counter; //6 ?>">
+								<div class="front-content__titles front-content__titles--section6">
 									<h2 class="front-content__title text text-large" data-swiper-animation="fadeInDown"
 									    data-duration=".2s" data-delay=".4s"><?php echo $facts_studio_s6; ?></h2>
 								</div>
@@ -520,7 +521,7 @@ get_header(); ?>
 								<?php endif; ?>
 							</div>
 							<?php if ( ! empty( $red_button_s6 ) || ! empty( $grey_button_s6 ) ): ?>
-								<div class="front-content__actions front-content__actions--section<?php echo $section_counter; //6 ?>">
+								<div class="front-content__actions front-content__actions--section6">
 									<?php if ( ! empty( $red_button_s6 ) ): ?>
 										<button class="def-button def-button__positive def-button__positive-toForm"
 										        data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".8s">
@@ -564,7 +565,7 @@ get_header(); ?>
 						<?php endif; ?>
 						<div class="front-content">
 							<?php if ( ! empty( $job_text_s7 ) ): ?>
-								<div class="front-content__slogans front-content__slogans--section<?php echo $section_counter; //7 ?>"
+								<div class="front-content__slogans front-content__slogans--section7"
 								     data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".4s">
 									<div class="front-content__job">
 										<p class="text text-medium"><?php echo $job_text_s7; ?></p>
@@ -572,7 +573,7 @@ get_header(); ?>
 								</div>
 							<?php endif; ?>
 							<?php if ( ! empty( $reviews_s7 ) ): ?>
-								<div class="front-content__titles front-content__titles--section<?php echo $section_counter; //7 ?>">
+								<div class="front-content__titles front-content__titles--section7">
 									<h2 class="front-content__title text text-large" data-swiper-animation="fadeInDown"
 									    data-duration=".2s" data-delay=".6s"><?php echo $reviews_s7; ?></h2>
 								</div>
@@ -607,7 +608,7 @@ get_header(); ?>
 								</div>
 							<?php endif; ?>
 							<?php if ( ! empty( $red_button_s7 ) || ! empty( $grey_button_s7 ) ): ?>	
-								<div class="front-content__actions front-content__actions--section<?php echo $section_counter; //7 ?>">
+								<div class="front-content__actions front-content__actions--section7">
 									<?php if ( ! empty( $red_button_s7 ) ): ?>
 										<button class="def-button def-button__positive def-button__positive-toForm"
 										        data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".8s"><?php echo $red_button_s7; ?>
@@ -650,7 +651,7 @@ get_header(); ?>
 						<?php endif; ?>	
 						<div class="front-content">
 							<?php if ( ! empty( $job_text_s8 ) ): ?>
-								<div class="front-content__slogans front-content__slogans--section<?php echo $section_counter; //8 ?>"
+								<div class="front-content__slogans front-content__slogans--section8"
 								     data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".4s">
 									<div class="front-content__job">
 										<p class="text text-medium"><?php echo $job_text_s8; ?></p>
@@ -658,7 +659,7 @@ get_header(); ?>
 								</div>
 							<?php endif; ?>	
 							<?php if ( ! empty( $profile_s8 ) ): ?>
-								<div class="front-content__titles front-content__titles--section<?php echo $section_counter; //8 ?>">
+								<div class="front-content__titles front-content__titles--section8">
 									<h2 class="front-content__title text text-large" data-swiper-animation="fadeInDown"
 									    data-duration=".2s" data-delay=".4s" data-anchor="last"><?php echo $profile_s8; ?></h2>
 								</div>
