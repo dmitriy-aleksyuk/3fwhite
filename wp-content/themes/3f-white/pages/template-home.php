@@ -21,8 +21,9 @@ get_header(); ?>
 	        	$grey_button_s1 = get_sub_field('grey_button_s1'); ?>
 	
 				<section class="slide-section swiper-slide slide-priority">
-					<?php //echo ( $section_counter == 1 ) ? 'slide-section__body--section' . $section_counter . '' : ''; ?>
-					<div class="slide-section__body slide-section__body--section1">
+					<?php //echo ( $section_counter == 1 ) ? ' slide-section__body--section' . $section_counter . '' : ''; ?>
+					<div class="slide-section__body<?php echo ( $section_counter == 1 ) ? ' slide-section__body--section' . $section_counter . '' : ''; ?>">
+					<!--<div class="slide-section__body slide-section__body--section1">-->
 					<?php if ( ! empty( $main_image_s1 ) ): ?>
 						<div class="front-interactive slide-section__interactive slide-section__interactive-<?php echo $section_counter; //1 ?>">
 							<div class="layer-0 front-interactive__img front-interactive__img--background">
