@@ -71,7 +71,7 @@
 			foreach( $contact_form_sections as $forms7 ):
 		    	$form_title = $forms7->post_title;
 		    endforeach;
-		 	$arr_forms_num = array(array( $form_title => $forms_counter)); 
+		 	$arr_forms_num = array( $form_title => $forms_counter ); 
 		 	//print_r($arr_forms_num); echo '11111'; ?>
 		 <?php endif;?>
 <?php endwhile; ?>
