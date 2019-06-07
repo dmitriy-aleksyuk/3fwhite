@@ -62,6 +62,20 @@
     <?php endwhile; ?>
 	</div>
 <?php endif; ?>
+
+<?php if( have_rows('sections_bilder') ): $s_counter = 0; ?>
+<?php while ( have_rows('sections_bilder') ) : the_row(); $s_counter++;
+		$contact_form_sections = get_sub_field('contact_form_profile_s8');
+		if ( ! empty( $contact_form_sections ) ):
+			$forms_counter = $s_counter; // counter for js
+			foreach( $contact_form_sections as $forms7 ):
+		    	$form_title = $forms7->post_title;
+		    endforeach;
+		 	$arr_forms_num = array(array( $form_title => $forms_counter)); 
+		 	//print_r($arr_forms_num); echo '11111'; ?>
+		 <?php endif;?>
+<?php endwhile; ?>
+<?php endif;?>
 		
 <script src="<?php echo get_template_directory_uri(); ?>/build/js/vendor/jquery_3.3.1.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/build/js/vendor/slider.js"></script>
