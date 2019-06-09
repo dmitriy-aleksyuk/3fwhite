@@ -50,6 +50,12 @@
 									<a class="main-header__link" href="tel:<?php echo clean_phone($phone_number); ?>"><?php echo $phone_number; ?></a>
 								</li>
 							<?php endif; ?>
+							
+								<!-- hardcode -->
+								<li class="main-header__item main-header__item--toForm">
+									<a class="main-header__link def-button__positive-toForm" href="#">записаться</a>
+								</li>
+								<!-- /hardcode -->
 						<?php elseif ( get_row_layout() == 'telegram' ): 
 							$telegram_link = get_sub_field('telegram_link');
 							$telegram_name = get_sub_field('telegram_name'); ?>

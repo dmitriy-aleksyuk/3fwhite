@@ -77,10 +77,6 @@
       width: 20px;
     }
 
-    //@media screen and (max-width: #{$mobileBreakpoint}) {
-    //  display: none;
-    //}
-
   }
 
   &__next {
@@ -100,13 +96,5 @@
     }
 
   }
-
-  //.arrow {
-  //  width: 1px;
-  //  height: 20px;
-  //  display: block;
-  //  background: red;
-  //  transform: rotate(45deg);
-  //}
 
 }

@@ -241,7 +241,7 @@
 			require('autoprefixer')({
 				browsers: ['> 1%']
 			}),
-			require('css-mqpacker')()
+			// require('css-mqpacker')()
 		]
 
 	};

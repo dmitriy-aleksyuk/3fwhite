@@ -5,13 +5,11 @@
     &.global-wrapper {
       height: auto;
       padding-top: 83px;
-      //overflow: hidden;
     }
   }
 
 }
 .swiper-container {
-  //width: 100%;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -19,7 +17,6 @@
   position: relative;
 
   @media screen and (max-width: #{$mobileBreakpoint}) {
-    //overflow: auto;
     height: auto;
   }
 
@@ -51,12 +48,6 @@
   left: -1px;
   z-index: 101;
 
-  //@media screen and (max-width: 1024px) {
-  //  left: 50%;
-  //  top: unset;
-  //  bottom: 180px;
-  //  transform: translateX(-50%);
-  //}
   @media screen and (max-width: #{$mobileBreakpoint}) {
     display: none;
   }

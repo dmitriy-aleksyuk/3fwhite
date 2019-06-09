@@ -43,6 +43,9 @@
           <li class="main-header__item main-header__item--phone">
             <a class="main-header__link" href="tel:+380670000001">+380670000001</a>
           </li>
+          <li class="main-header__item main-header__item--toForm">
+            <a class="main-header__link def-button__positive-toForm" href="#">записаться</a>
+          </li>
           <li class="main-header__item main-header__item--telegram">
             <a class="main-header__link" href="#">@telegram</a>
           </li>
@@ -441,9 +444,10 @@
           <div class="form-block__file">
             <input class="form-block__input" type="file" id="form-file">
             <label class="form-block__label" for="form-file">+</label>
+            <div class="form-block__file-name"></div>
           </div>
           <div class="form-block__actions front-content__actions--section8">
-            <button class="def-button def-button__positive" data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".8s">отправить анкету</button>
+            <input class="def-button def-button__positive" data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".8s" type="submit" value="отправить анкету">
             <button class="def-button def-button__negative def-button__negative--back" data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".9s">назад</button>
           </div>
         </form>
@@ -530,6 +534,15 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  let forms = [
+    {
+      formName: 'contact form',
+      formIndex: 8
+    }
+  ]
+</script>
 
 <script src="js/vendor/jquery_3.3.1.js"></script>
 <script src="js/vendor/slider.js"></script>

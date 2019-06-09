@@ -410,8 +410,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 // for slide event
                 $('.def-button__positive-toForm').on('click', (e) => {
                     e.preventDefault();
+                    if($('.main-header__social').hasClass('main-header__social--active') || $('.ham').hasClass('active')){
+                        $('.main-header__social').removeClass('main-header__social--active');
+                        $('.ham').removeClass('active');
+                    }
                     if ($(window).width() > breakpoint) {
-                        swiper.slideTo(7, 500);
+                        swiper.slideTo(+formsObj8.formIndex, 500);
                     }
                 });
 
@@ -501,6 +505,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.preventDefault();
                     scrollToAnchor('calculate');
                 });
+
+                var inputFile = $( ".form-block__input[type='file']" );
+                var infoArea = $( '.form-block__file-name' );
+
+                inputFile.on( 'change', showFileName );
+
+                function showFileName( event ) {
+
+                    // the change event gives us the input it occurred in
+                    let input = event.target;
+
+                    // the input has an array of files in the `files` property, each one has a name that you can use. We're just using the name here.
+                    let fileName = input.files[0].name;
+
+                    // use fileName however fits your app best, i.e. add it into a div
+                    infoArea.html(fileName);
+                }
 
 
 

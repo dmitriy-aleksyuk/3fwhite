@@ -75,18 +75,15 @@
 		 	 	'section'	=> $forms_counter,
         		'form_name' => $form_title
 		 	 	) ); ?>
-		 	<script>
-			var formsObj = new Object(),
-			    sNum = "<?php echo $arr_forms_num[0]['section']; ?>",
-				fName = "<?php echo $arr_forms_num[0]['form_name']; ?>"
-				formsObj[sNum] = fName;
-			//console.log(formsObj);	
+		 	<script type='text/javascript'>
+		 	var formsObj<?php echo $arr_forms_num[0]['section']; ?> = {
+		 		formName: '<?php echo $arr_forms_num[0]['form_name']; ?>',
+		 		formIndex: <?php echo $arr_forms_num[0]['section']; ?>
+		 	}
 			</script>
 		 <?php endif;?>
 <?php endwhile; ?>
 <?php endif;?>
-		
-		
 		
 <script src="<?php echo get_template_directory_uri(); ?>/build/js/vendor/jquery_3.3.1.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/build/js/vendor/slider.js"></script>

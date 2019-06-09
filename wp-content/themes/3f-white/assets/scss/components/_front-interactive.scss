@@ -17,14 +17,10 @@
     display: none;
   }
 
-  //@media screen and (max-height: 890px) {
-  //  max-width: 660px;
-  //}
-
   @media screen and (max-height: 890px) and (max-width: 1600px) {
     max-width: 600px;
   }
-  //
+
   @media screen and (max-height: 730px) and (max-width: 1440px) {
     max-width: 535px;
   }
@@ -44,14 +40,6 @@
     position: absolute;
     height: 100%;
   }
-
-  //@media screen and (max-width: 600px) {
-  //  display: none;
-  //}
-  //
-  //@media screen and (max-height: 650px) {
-  //  max-width: 460px;
-  //}
 
   @media screen and (max-width: 1200px) {
     &:before {
@@ -87,10 +75,6 @@
         bottom: unset !important;
         top: 20px !important;
       }
-
-      //@media screen and (max-width: 580px) {
-      //  display: none;
-      //}
 
     }
 
@@ -158,8 +142,6 @@
     &--section-7 {
 
       img {
-        //transform: translate(-11%, 8%);
-        //width: 93%;
         transform: translate(-3%, 9%);
         width: 80%;
       }
