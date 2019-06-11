@@ -180,8 +180,9 @@ function white_manage_privacy_options( $caps, $cap, $user_id, $args ) {
 add_action( 'map_meta_cap', 'white_manage_privacy_options', 1, 4 );
 
 /*Contact form 7 remove span*/
-add_filter('wpcf7_form_elements', function( $content ) {
-    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
-    $content = str_replace('<br />', '', $content);
-    return $content;
-});
+// add_filter('wpcf7_form_elements', function( $content ) {
+//     $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+//     $content = str_replace('<br />', '', $content);
+//     return $content;
+// });
+
