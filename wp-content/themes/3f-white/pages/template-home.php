@@ -4,13 +4,13 @@ Template Name: Home Template
 */
 get_header(); ?>
 
-<?php if( have_rows('sections_bilder') ): $section_counter = 0; ?>
+<?php if( have_rows('sections_bilder') ): //$section_counter = 0; ?>
 
 	<div class="wrapper">
 		<div class="container container--fluid swiper-container">
 			<div class="swiper-wrapper global-wrapper" data-anchor="first">
 				
-		    <?php while ( have_rows('sections_bilder') ) : the_row(); $section_counter++;?>
+		    <?php while ( have_rows('sections_bilder') ) : the_row(); //$section_counter++;?>
 	        <?php if( get_row_layout() == 'section_1' ): 
 	        	$main_image_s1 = get_sub_field('main_image_s1');
 	        	$job_text_s1 = get_sub_field('job_text_s1');
@@ -26,7 +26,7 @@ get_header(); ?>
 					*/?>
 					<div class="slide-section__body slide-section__body--section1">
 					<?php if ( ! empty( $main_image_s1 ) ): ?>
-						<div class="front-interactive slide-section__interactive slide-section__interactive-<?php echo $section_counter; //1 ?>">
+						<div class="front-interactive slide-section__interactive slide-section__interactive-1<?php //echo $section_counter; //1 ?>">
 							<div class="layer-0 front-interactive__img front-interactive__img--background">
 								<img src="<?php echo get_template_directory_uri(); ?>/build/images/top_z-index_1_9.png" alt="">
 							</div>
@@ -63,7 +63,7 @@ get_header(); ?>
 							<?php if ( ! empty( $red_button_s1 ) || ! empty( $grey_button_s1 ) ): ?>
 								<div class="front-content__actions front-content__actions--section1">
 									<?php if ( ! empty( $red_button_s1 ) ): ?>
-										<button class="def-button def-button__positive def-button__positive-toForm"
+										<button class="def-button def-button__positive def-button__positive--to3 def-button__jsform"
 										        data-swiper-animation="fadeInDown" data-duration=".5s" data-delay=".5s">
 											<?php echo $red_button_s1; ?>
 										</button>
@@ -92,7 +92,7 @@ get_header(); ?>
 				<section class="slide-section swiper-slide slide-priority">
 					<div class="slide-section__body">
 					<?php if ( ! empty( $main_image_s2 ) ): ?>	
-						<div class="front-interactive slide-section__interactive slide-section__interactive-<?php echo $section_counter; //2 ?>">
+						<div class="front-interactive slide-section__interactive slide-section__interactive-2<?php //echo $section_counter; //2 ?>">
 							<div class="layer-0 front-interactive__img front-interactive__img--background">
 								<img src="<?php echo get_template_directory_uri(); ?>/build/images/top_z-index_2_11.png" alt="">
 							</div>
@@ -136,7 +136,7 @@ get_header(); ?>
 							<?php if ( ! empty( $red_button_s2 ) || ! empty( $grey_button_s2 ) ): ?>
 								<div class="front-content__actions front-content__actions--section2">
 									<?php if ( ! empty( $red_button_s2 ) ): ?>
-										<button class="def-button def-button__positive def-button__positive-toForm" id="test"
+										<button class="def-button def-button__positive def-button__positive--to3 popup-window__toForm"
 										        data-swiper-animation="fadeInDown" data-duration=".5s" data-delay="1s">
 											<?php echo $red_button_s2; ?>
 										</button>
@@ -165,7 +165,7 @@ get_header(); ?>
 				<section class="slide-section swiper-slide slide-priority">
 					<div class="slide-section__body">
 						<?php if ( ! empty( $main_image_s3 ) ): ?>
-							<div class="front-interactive slide-section__interactive slide-section__interactive-<?php echo $section_counter; //3 ?>">
+							<div class="front-interactive slide-section__interactive slide-section__interactive-3<?php //echo $section_counter; //3 ?>">
 								<div class="layer-0 front-interactive__img front-interactive__img--background">
 									<img src="<?php echo get_template_directory_uri(); ?>/build/images/top_z-index_2_11.png" alt="">
 								</div>
@@ -206,7 +206,7 @@ get_header(); ?>
 							<?php if ( ! empty( $red_button_s3 ) || ! empty( $grey_button_s3 ) ): ?>
 								<div class="front-content__actions front-content__actions--section3">
 									<?php if ( ! empty( $red_button_s3 ) ): ?>
-										<button class="def-button def-button__positive def-button__positive-toForm"
+										<button class="def-button def-button__positive def-button__positive--to4 popup-window__toForm"
 										        data-swiper-animation="fadeInDown" data-duration=".5s" data-delay="1s">
 											<?php echo $red_button_s3; ?>
 										</button>
@@ -235,7 +235,7 @@ get_header(); ?>
 				<section class="slide-section swiper-slide slide-priority">
 					<div class="slide-section__body">
 						<?php if ( ! empty( $main_image_s3 ) ): ?>
-							<div class="front-interactive slide-section__interactive slide-section__interactive-<?php echo $section_counter; //4 ?>">
+							<div class="front-interactive slide-section__interactive slide-section__interactive-4<?php //echo $section_counter; //4 ?>">
 								<div class="layer-0 front-interactive__img front-interactive__img--background">
 									<img src="<?php echo get_template_directory_uri(); ?>/build/images/top_z-index_4_9.png" alt="">
 								</div>
@@ -305,7 +305,7 @@ get_header(); ?>
 				<section class="slide-section swiper-slide slide-priority">
 					<div class="slide-section__body">
 						<?php if ( ! empty( $main_image_s5 ) ): ?>
-						<div class="front-interactive slide-section__interactive slide-section__interactive-<?php echo $section_counter; //5 ?>">
+						<div class="front-interactive slide-section__interactive slide-section__interactive-5<?php //echo $section_counter; //5 ?>">
 							<div class="layer-0 front-interactive__img front-interactive__img--background">
 								<img src="<?php echo get_template_directory_uri(); ?>/build/images/top_z-index_1_9.png" alt="">
 							</div>
@@ -443,13 +443,9 @@ get_header(); ?>
 		    						</div>
 								<?php endif; ?>
 								<?php if ( ! empty( $red_button_s5 ) || ! empty( $grey_button_s5 ) ): ?>
-									<div class="calculate-block__buttons" style="display: none">
-										<?php if ( ! empty( $red_button_s5 ) ): ?>
-											<button class="def-button def-button__positive"><?php echo $red_button_s5; ?></button>
-										<?php endif; ?>
-										<?php if ( ! empty( $grey_button_s5 ) ): ?>
-											<button class="def-button def-button__negative"><?php echo $grey_button_s5; ?></button>
-										<?php endif; ?>
+									<div class="calculate-block__buttons">
+										<button class="def-button def-button__positive def-button__positive--next def-button__facts">интересно</button>
+										<button class="def-button def-button__negative def-button__negative--back"><?php echo $grey_button_s5; ?></button>
 									</div>
 								<?php endif; ?>
 							</div>
@@ -467,10 +463,10 @@ get_header(); ?>
 	        	$red_button_s6 = get_sub_field('red_button_s6');
 	        	$grey_button_s6 = get_sub_field('grey_button_s6'); ?>
 	        
-				<section class="slide-section swiper-slide slide-priority">
+				<section class="slide-section swiper-slide slide-priority" data-anchor="facts">
 					<div class="slide-section__body">
 						<?php if ( ! empty( $main_image_s6 ) ): ?>
-							<div class="front-interactive slide-section__interactive slide-section__interactive-<?php echo $section_counter; //6 ?>">
+							<div class="front-interactive slide-section__interactive slide-section__interactive-6<?php //echo $section_counter; //6 ?>">
 								<div class="layer-0 front-interactive__img front-interactive__img--background">
 									<img src="<?php echo get_template_directory_uri(); ?>/build/images/top_z-index_6_4.png" alt="">
 								</div>
@@ -523,7 +519,7 @@ get_header(); ?>
 							<?php if ( ! empty( $red_button_s6 ) || ! empty( $grey_button_s6 ) ): ?>
 								<div class="front-content__actions front-content__actions--section6">
 									<?php if ( ! empty( $red_button_s6 ) ): ?>
-										<button class="def-button def-button__positive def-button__positive-toForm"
+										<button class="def-button def-button__positive def-button__positive--to7 popup-window__toForm"
 										        data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".8s">
 											<?php echo $red_button_s6; ?>
 										</button>
@@ -551,7 +547,7 @@ get_header(); ?>
 	 			<section class="slide-section swiper-slide slide-priority">
 					<div class="slide-section__body">
 						<?php if ( ! empty( $main_image_s7 ) ): ?>
-							<div class="front-interactive slide-section__interactive slide-section__interactive-<?php echo $section_counter; //7 ?>">
+							<div class="front-interactive slide-section__interactive slide-section__interactive-7<?php //echo $section_counter; //7 ?>">
 								<div class="layer-0 front-interactive__img front-interactive__img--background">
 									<img src="<?php echo get_template_directory_uri(); ?>/build/images/top_z-index_7_7.png" alt="">
 								</div>
@@ -631,13 +627,12 @@ get_header(); ?>
 	        	$job_text_s8 = get_sub_field('job_text_s8');
 	        	$profile_s8 = get_sub_field('profile_s8');
 	        	$fill_profile_s8 = get_sub_field('fill_profile_s8');
-	        	$contact_form_profile_s8 = get_sub_field('contact_form_profile_s8'); 
-	        	$grey_button_s8 = get_sub_field('grey_button_s8'); ?>
+	        	$contact_form_profile_s8 = get_sub_field('contact_form_profile_s8'); ?>
 	        
 				<section class="slide-section swiper-slide slide-priority">
 					<div class="slide-section__body">
 						<?php if ( ! empty( $main_image_s8 ) ): ?>
-							<div class="front-interactive slide-section__interactive slide-section__interactive-<?php echo $section_counter; //8 ?>">
+							<div class="front-interactive slide-section__interactive slide-section__interactive-8<?php //echo $section_counter; //8 ?>">
 								<div class="layer-0 front-interactive__img front-interactive__img--background">
 									<img src="<?php echo get_template_directory_uri(); ?>/build/images/top_z-index_8_1.png" alt="">
 								</div>
@@ -678,15 +673,6 @@ get_header(); ?>
 									    		echo do_shortcode( '[contact-form-7 id="' . $cf7_id . '" title="' . $cf7_title . '"]' ); 
 									    endforeach;
 							    	endif; ?>
-							    	
-							    <?php if ( ! empty( $grey_button_s8 ) ): ?>	
-							    	<div class="form-block__actions front-content__actions--section8">
-										<button class="def-button def-button__negative def-button__negative--back"
-										        data-swiper-animation="fadeInDown" data-duration=".2s" data-delay=".9s">
-											<?php echo $grey_button_s8; ?>
-										</button>
-									</div>
-								<?php endif; ?>
 							</div>
 						</div>
 					</div>

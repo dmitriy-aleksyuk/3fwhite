@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function scrollToAnchor(id) {
         let onPlace = $("[data-anchor='" + id + "']");
-        $('body, html').animate({scrollTop: onPlace.offset().top}, 2000);
+        $('body, html').animate({scrollTop: onPlace.offset().top - 100}, 2000);
     }
 
     class Popup {
@@ -415,7 +415,28 @@ document.addEventListener('DOMContentLoaded', () => {
                         $('.ham').removeClass('active');
                     }
                     if ($(window).width() > breakpoint) {
-                        swiper.slideTo(+formsObj8.formIndex, 500);
+                        swiper.slideTo(+contactForm187.slideIndex - 1, 500);
+                    }
+                });
+                
+                $('.def-button__positive--to3').on('click', (e) => {
+                    e.preventDefault();
+                    if ($(window).width() > breakpoint) {
+                        swiper.slideTo(2, 500);
+                    }
+                });
+                
+                $('.def-button__positive--to4').on('click', (e) => {
+                    e.preventDefault();
+                    if ($(window).width() > breakpoint) {
+                        swiper.slideTo(3, 500);
+                    }
+                });
+                
+                $('.def-button__positive--to7').on('click', (e) => {
+                    e.preventDefault();
+                    if ($(window).width() > breakpoint) {
+                        swiper.slideTo(6, 500);
                     }
                 });
 
@@ -448,10 +469,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                $('.popup-window__try-3').on('click', (e) => {
+                $('.popup-window__try--3').on('click', (e) => {
                     e.preventDefault();
+                    console.log(1);
                     if ($(window).width() > breakpoint) {
                         swiper.slideTo(2, 500);
+                        popupBtns.forEach(item => {
+                            return item.classList.contains('disabled-link') ? item.classList.remove('disabled-link') : false
+                        });
+                        for (let i = 0; i < popupBlocks.length; i++) {
+                            if (popupBlocks[i].classList.contains('popup-window__content--active')) {
+                                popup.close(popupBlocks[i]);
+                            }
+                        }
+                    }
+                });
+                
+                $('.popup-window--third .popup-window__try--3').on('click', (e) => {
+                    e.preventDefault();
+                    console.log(1);
+                    if ($(window).width() > breakpoint) {
+                        swiper.slideTo(3, 500);
                         popupBtns.forEach(item => {
                             return item.classList.contains('disabled-link') ? item.classList.remove('disabled-link') : false
                         });
@@ -481,6 +519,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 $('.def-button__positive-toForm').click(function(e) {
                     e.preventDefault();
                     scrollToAnchor('last');
+                });
+                
+                $('.def-button__jsform').click(function(e) {
+                    e.preventDefault();
+                    scrollToAnchor('last');
+                });
+                
+                $('.def-button__facts').click(function(e) {
+                    e.preventDefault();
+                    scrollToAnchor('facts');
                 });
 
                 $('.popup-window__toForm').click(function(e) {

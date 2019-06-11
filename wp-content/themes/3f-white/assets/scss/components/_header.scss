@@ -17,7 +17,7 @@
     margin: 0 auto;
     padding: 35px 0;
 
-    @media screen and (max-width: 850px) {
+    @media screen and (max-width: 850px) and (min-width: 600px) {
       width: calc(100% - 50px);
     }
 
@@ -147,7 +147,9 @@
 
     &--toForm {
       .main-header__link {
+        display: block;
         padding: 7px 10px;
+        min-width: 140px;
         background: #ffffff;
         color: #ee3723;
       }

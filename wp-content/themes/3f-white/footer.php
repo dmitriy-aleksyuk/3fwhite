@@ -52,7 +52,7 @@
 						</div>
 						<?php if ( ! empty( $popup_button ) ): ?>
 						<div class="popup-window__action">
-							<button class="popup-window__try popup-window__try-4 popup-window__toForm"><?php echo $popup_button; ?></button>
+							<button class="popup-window__try popup-window__try--3 popup-window__toForm"><?php echo $popup_button; ?></button>
 						</div>
 						<?php endif; ?>
 					</div>
@@ -67,20 +67,23 @@
 <?php while ( have_rows('sections_bilder') ) : the_row(); $s_counter++;
 		$contact_form_sections = get_sub_field('contact_form_profile_s8');
 		if ( ! empty( $contact_form_sections ) ):
-			$forms_counter = $s_counter; // counter for js
+			$forms_counter = $s_counter; //counter sections
 			foreach( $contact_form_sections as $forms7 ):
+				$form_id = $forms7->ID;
 		    	$form_title = $forms7->post_title;
+		    	$form_type_for_js = $forms7->post_type;
 		    endforeach;
 		 	 $arr_forms_num = array( array(
 		 	 	'section'	=> $forms_counter,
-        		'form_name' => $form_title
-		 	 	) ); ?>
-		 	<script type='text/javascript'>
-		 	var formsObj<?php echo $arr_forms_num[0]['section']; ?> = {
-		 		formName: '<?php echo $arr_forms_num[0]['form_name']; ?>',
-		 		formIndex: <?php echo $arr_forms_num[0]['section']; ?>
-		 	}
-			</script>
+		 	 	'form_id'	=> $form_id,// Id form for js
+	    		'form_name' => $form_title,
+	    		'form_type' => $form_type_for_js//wpcf7_contact_form
+		 	 	) ); 
+		 	 	//print_r($arr_forms_num[0]['form_id']); ?>
+			<script type="text/javascript">
+				var contactForm<?php echo $arr_forms_num[0]['form_id']; ?> = new Object();
+				contactForm<?php echo $arr_forms_num[0]['form_id']; ?>.slideIndex = <?php echo $arr_forms_num[0]['section']; ?>;
+		 	</script>
 		 <?php endif;?>
 <?php endwhile; ?>
 <?php endif;?>

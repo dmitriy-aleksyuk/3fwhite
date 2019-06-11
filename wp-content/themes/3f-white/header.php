@@ -53,7 +53,7 @@
 							
 								<!-- hardcode -->
 								<li class="main-header__item main-header__item--toForm">
-									<a class="main-header__link def-button__positive-toForm" href="#">записаться</a>
+									<a class="main-header__link def-button__positive-toForm" href="#">Заполнить анкету</a>
 								</li>
 								<!-- /hardcode -->
 						<?php elseif ( get_row_layout() == 'telegram' ): 

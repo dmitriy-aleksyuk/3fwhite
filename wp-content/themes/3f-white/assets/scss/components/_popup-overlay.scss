@@ -158,14 +158,18 @@
     margin: auto;
     top: 265px;
 
-    @media screen and (max-width: 1600px) {
+    @media screen and (max-width: 1600px) and (min-width: 1440px) {
       top: 223px;
       max-width: 585px;
     }
 
-    @media screen and (max-width: 1440px) {
-      top: 203px !important;
-      max-width: 525px !important;
+    @media screen and (max-width: 1440px) and (min-width: 768px) {
+      top: 203px;
+      max-width: 525px;
+    }
+    
+    @media screen and (max-width: 768px) {
+      top: 110px;
     }
 
   }

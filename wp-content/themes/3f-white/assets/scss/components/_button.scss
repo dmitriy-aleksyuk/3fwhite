@@ -71,6 +71,12 @@
       transform: translateX(1px);
       transition: border-color .3s;
     }
+    
+    &--back {
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
 
   }
 
