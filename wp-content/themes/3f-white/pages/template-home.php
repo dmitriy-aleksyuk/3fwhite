@@ -444,8 +444,12 @@ get_header(); ?>
 								<?php endif; ?>
 								<?php if ( ! empty( $red_button_s5 ) || ! empty( $grey_button_s5 ) ): ?>
 									<div class="calculate-block__buttons">
-										<button class="def-button def-button__positive def-button__positive--next def-button__facts">интересно</button>
-										<button class="def-button def-button__negative def-button__negative--back"><?php echo $grey_button_s5; ?></button>
+										<?php if ( ! empty( $red_button_s5 ) ): ?>
+											<button class="def-button def-button__positive def-button__positive--next def-button__facts"><?php echo $red_button_s5; ?></button>
+										<?php endif; ?>
+										<?php if ( ! empty( $grey_button_s5 ) ): ?>
+											<button class="def-button def-button__negative def-button__negative--back"><?php echo $grey_button_s5; ?></button>
+										<?php endif; ?>
 									</div>
 								<?php endif; ?>
 							</div>
