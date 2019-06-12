@@ -39,15 +39,18 @@ div.wpcf7-validation-errors,
 div.wpcf7-acceptance-missing {
 	/*border: 2px solid #f7e700;*/
 	color: #ee3723;
+	font-size: 14px;
 }
 
 .wpcf7-form-control-wrap {
+	display: block;
 	position: relative;
+	margin-bottom: 15px;
 }
 
 span.wpcf7-not-valid-tip {
 	color: #f00;
-	font-size: 1em;
+	font-size: 11px;
 	font-weight: normal;
 	display: block;
 }
@@ -118,4 +121,8 @@ div.wpcf7 input[type="file"]:disabled {
 
 div.wpcf7 .wpcf7-submit:disabled {
 	cursor: not-allowed;
+}
+
+.form-block__input.wpcf7-not-valid {
+	border-bottom-color: #ee3723;
 }

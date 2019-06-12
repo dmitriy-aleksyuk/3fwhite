@@ -70,3 +70,9 @@ img {
   max-width: 100%;
   height: auto
 }
+
+// for capcha
+.wpcf7-form-control.g-recaptcha {
+  display: inline-block;
+  margin: 0 auto 20px;
+}
