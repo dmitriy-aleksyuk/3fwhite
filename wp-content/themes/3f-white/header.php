@@ -51,11 +51,12 @@
 								</li>
 							<?php endif; ?>
 							
-								<!-- hardcode -->
+						<?php elseif ( get_row_layout() == 'toform' ): 
+							if ( ! empty( $fill_contact_form = get_sub_field('fill_contact_form' ) ) ): ?>
 								<li class="main-header__item main-header__item--toForm">
-									<a class="main-header__link def-button__positive-toForm" href="#">Заполнить анкету</a>
+									<a class="main-header__link def-button__positive-toForm" href="#"><?php echo $fill_contact_form; ?></a>
 								</li>
-								<!-- /hardcode -->
+								<?php endif; ?>
 						<?php elseif ( get_row_layout() == 'telegram' ): 
 							$telegram_link = get_sub_field('telegram_link');
 							$telegram_name = get_sub_field('telegram_name'); ?>
